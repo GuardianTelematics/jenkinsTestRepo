@@ -1,19 +1,15 @@
 pipeline {
  agent any
-
- stages {
-
-    stage('test'){
-      steps{
-        echo "hello from jenkinsfile!!"
-        echo "hello!!!!"
-      }
-
-    }
-
- }  
-
-
+	 stages {
+		 stage('for the PR'){
+			when{
+				branch 'PR-*'
+			}
+			steps{
+				echo 'this only runow for the PRs'
+			}
+		}
+	}  
 }
 
 
